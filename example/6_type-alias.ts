@@ -5,27 +5,38 @@
 // function sum(a: number, b:number) {
 //   return a + b;
 // }
-type SumParameter = number;
+// type SumParameter = number;
 
-function sum(a: SumParameter, b: SumParameter) {
-  return a + b;
-}
+// function sum(a: SumParameter, b: SumParameter) {
+//   return a + b;
+// }
 
 // #2
+// type Person = {
+//   name: string;
+//   age: number;
+// };
+
+// function getPerson(): Person {
+//   // ...
+// }
+
+// // #3
+// type Hero = {
+//   skill: string;
+// };
+
+// const capt: Hero = {
+//   // skill: 'throwing a shield'
+// };
+
+// interface Person {
+//   name: string;
+//   age: number;
+// }
 type Person = {
   name: string;
   age: number;
 };
 
-function getPerson(): Person {
-  // ...
-}
-
-// #3
-type Hero = {
-  skill: string;
-}
-
-const capt: Hero = { 
-  // skill: 'throwing a shield' 
-}
+const person: Person = { name: "아무개", age: 20 };

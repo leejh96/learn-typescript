@@ -38,6 +38,8 @@ interface ShoppingItems {
   address: string;
   stock: number;
 }
+
+// keyof는 선언된 인터페이스 속성중에 키값을 가지고 타입을 지정
 function getAllowedOptions<T extends keyof ShoppingItems>(option: T): T {
   if (option === 'name' || option === 'address') {
     console.log('option type is string');
@@ -49,5 +51,31 @@ function getAllowedOptions<T extends keyof ShoppingItems>(option: T): T {
   }
 }
 getAllowedOptions('nothing');
+getAllowedOptions('name');
+
 // const a = getAllowedOptions('name');
 // a.toUpperCase(); // Name
+
+// function logTextLength<T>(text : T):T{
+//   console.log(text.length);
+//   return text;
+// }
+
+// logTextLength<string[]>('hi');
+
+interface LengthType{
+  length: number;
+}
+
+function logTextLength<T extends LengthType>(text : T):number{
+  const len = text.length;
+  return len;
+}
+logTextLength('a')
+
+T ? T: string & { length : number }
+b : Data{ data : string, value: number }
+interface Data{
+  data: string;
+  value: number;
+}
